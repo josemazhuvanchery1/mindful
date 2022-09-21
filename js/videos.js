@@ -1,3 +1,5 @@
+import { videoSearch } from 'sentiment.js'
+
 window.addEventListener('DOMContentLoaded', () => {
     const vid0 = document.querySelector('#vid-0')
     const vid1 = document.querySelector('#vid-1')
@@ -8,8 +10,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const vid6 = document.querySelector('#vid-6')
     const vid7 = document.querySelector('#vid-7')
     const vid8 = document.querySelector('#vid-8')
+    let typeSearch
+    if (videoSearch === 'negative'){
+        typeSearch = 'motivational meditation'
+    } else {
+        typeSearch = 'meditation'
+    }
 
-    fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=meditation&key=AIzaSyCf9p4GkhwTsJWJmWruTAgUhTOjGDbouYI')
+
+    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${typeSearch}&key=AIzaSyCf9p4GkhwTsJWJmWruTAgUhTOjGDbouYI`)
     .then(response => response.json())
     .then(data => {
         vid0.src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`
