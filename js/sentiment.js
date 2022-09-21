@@ -1,4 +1,4 @@
-export { videoSearch }
+//export { videoSearch }
 console.log('hello world')
 let textValue = document.getElementById('text')
 const submitBttn = document.getElementById('submit');
@@ -29,52 +29,53 @@ async function getSentiment() {
         .then(response => response.json())
         .catch(err => console.error(err));
     const score = fetchedData.score;
-     const tone = fetchedData.type;
+    const tone = fetchedData.type;
     console.log(fetchedData)
     getpercentage(fetchedData)
     let imgDiv = document.getElementById('emoji');
     if (fetchedData.type === 'positive') {
-        imgDiv.src = '../images/happy_face.png'
+        imgDiv.src = '../images/cowboy-hat-face.png'
     }
     else if (fetchedData.type === 'negative') {
-        imgDiv.src = '../images/sad_face.png'
+        imgDiv.src = '../images/persevering-face.png'
         let videoSearch = 'negative'
     }
-    else imgDiv.src = '../images/neutral_face.png';
+    else imgDiv.src = '../images/diagnol-face.png';
 
     let date = new Date(document.getElementById('dateEntry').value);
-    
+
     let dateString2 = date.toLocaleDateString('en-us', {
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
     });
-    let obj = {toneVal: tone,
-        dataVal:data
+    let obj = {
+        toneVal: tone,
+        dataVal: data
     }
-    localStorage.setItem(dateString2,JSON.stringify(obj));
-   //document.getElementById('exampleModalCenter').modal('show')
-   document.getElementById('exampleModalLabel').innerText = dateString2
-   document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% negative`
+    localStorage.setItem(dateString2, JSON.stringify(obj));
+    //document.getElementById('exampleModalCenter').modal('show')
+    document.getElementById('exampleModalLabel').innerText = dateString2
+    document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% neutral`
 }
 
-function getpercentage(fetchedData){
+function getpercentage(fetchedData) {
     let posCount = 0;
-    let negCount =0;
-    let neutCount= 0;
+    let negCount = 0;
+    let neutCount = 0;
     let keywords = fetchedData.keywords;
-    for(let i =0; i<keywords.length; i++){
-       
+    for (let i = 0; i < keywords.length; i++) {
+
         let score = keywords[i].score
-        if(score>0.3){
+        if (score > 0.3) {
             posCount++;
         }
-        else if (score < - 0.3){
+        else if (score < - 0.3) {
             negCount++
         }
         else neutCount++
     }
-    postivePercentage = posCount/keywords.length*100;
-    negativePercentage = negCount/keywords.length*100;
-    neutralPercentage = neutCount/keywords.length*100;
+    postivePercentage = posCount / keywords.length * 100;
+    negativePercentage = negCount / keywords.length * 100;
+    neutralPercentage = neutCount / keywords.length * 100;
 }
