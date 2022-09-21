@@ -2,6 +2,10 @@ console.log('hello world')
 let textValue = document.getElementById('text')
 const submitBttn = document.getElementById('submit');
 submitBttn.addEventListener('click', getSentiment)
+let postivePercentage = 0;
+let negativePercentage = 0;
+let neutralPercentage = 0;
+
 
 async function getSentiment() {
     const data = textValue.value;
@@ -22,8 +26,9 @@ async function getSentiment() {
         .then(response => response.json())
         .catch(err => console.error(err));
     const score = fetchedData.score;
-    const tone = fetchedData.type;
+     const tone = fetchedData.type;
     console.log(fetchedData)
+    getpercentage(fetchedData)
     let imgDiv = document.getElementById('emoji');
     if (fetchedData.type === 'positive') {
         imgDiv.src = '../images/happy_face.png'
@@ -34,21 +39,38 @@ async function getSentiment() {
     else imgDiv.src = '../images/neutral_face.png';
 
     let date = new Date(document.getElementById('dateEntry').value);
-    //date = new Date (date.toUTCString())
-    //let d = new Date( input );
+    
     let dateString2 = date.toLocaleDateString('en-us', {
-        //weekday: 'long',
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
     });
-    // console.log(dateString2)
     let obj = {toneVal: tone,
         dataVal:data
     }
-    // let objParsed = JSON.parse(JSON.stringify(obj))
-    // console.log(objParsed)
-    localStorage.setItem(dateString2,[tone, data]);
+    localStorage.setItem(dateString2,JSON.stringify(obj));
+   //document.getElementById('exampleModalCenter').modal('show')
+   document.getElementById('exampleModalLabel').innerText = dateString2
+   document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% negative`
 }
 
-
+function getpercentage(fetchedData){
+    let posCount = 0;
+    let negCount =0;
+    let neutCount= 0;
+    let keywords = fetchedData.keywords;
+    for(let i =0; i<keywords.length; i++){
+       
+        let score = keywords[i].score
+        if(score>0.3){
+            posCount++;
+        }
+        else if (score < - 0.3){
+            negCount++
+        }
+        else neutCount++
+    }
+    postivePercentage = posCount/keywords.length*100;
+    negativePercentage = negCount/keywords.length*100;
+    neutralPercentage = neutCount/keywords.length*100;
+}
