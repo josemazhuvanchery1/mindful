@@ -11,6 +11,8 @@ const day2 = date2.getDate();
 const month2 = date2.getMonth() + 1;
 const year2 = date2.getFullYear()
 
+// let newDateString = '';
+
 function load() {
   const dt = new Date();
 
@@ -65,7 +67,11 @@ function load() {
           divImg.src = '../images/neutral_face.png';
           console.log(toneParsed.toneVal)
         }
-        daySquare.addEventListener('click', /*console.log(toneParsed.dataVal)*/ showTextModal);
+        daySquare.addEventListener('click', () => {
+          $('#exampleModalLong').modal("show")
+          document.getElementById('exampleModalLongTitle').innerText = newDateString;
+          document.getElementById('modalBody').innerText = toneParsed.dataVal
+        });
       }
       daySquare.innerText = i - paddingDays;
 
@@ -96,11 +102,6 @@ function initButtons() {
   });
 }
 
-function showTextModal() {
-  $('#exampleModalLong').modal("show")
-
-
-}
 
 initButtons();
 load();

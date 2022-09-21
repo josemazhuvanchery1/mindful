@@ -1,4 +1,3 @@
-
 console.log('hello world')
 let textValue = document.getElementById('text')
 const submitBttn = document.getElementById('submit');
@@ -33,12 +32,13 @@ async function getSentiment() {
     getpercentage(fetchedData)
     let imgDiv = document.getElementById('emoji');
     if (fetchedData.type === 'positive') {
-        imgDiv.src = '../images/happy_face.png'
+        imgDiv.src = '../images/cowboy-hat-face.png'
     }
     else if (fetchedData.type === 'negative') {
-        imgDiv.src = '../images/sad_face.png'
+        imgDiv.src = '../images/persevering-face.png'
+        let videoSearch = 'negative'
     }
-    else imgDiv.src = '../images/neutral_face.png';
+    else imgDiv.src = '../images/diagnol-face.png';
 
     let date = new Date(document.getElementById('dateEntry').value);
 
@@ -54,7 +54,8 @@ async function getSentiment() {
     localStorage.setItem(dateString2, JSON.stringify(obj));
     //document.getElementById('exampleModalCenter').modal('show')
     document.getElementById('exampleModalLabel').innerText = dateString2
-    document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% negative`
+    document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% neutral`
+
 }
 
 function getpercentage(fetchedData) {
