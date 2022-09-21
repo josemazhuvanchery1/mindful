@@ -2,6 +2,7 @@ console.log('hello world')
 let textValue = document.getElementById('text')
 const submitBttn = document.getElementById('submit');
 submitBttn.addEventListener('click', getSentiment)
+export { videoSearch }
 
 async function getSentiment() {
     const data = textValue.value;
@@ -30,6 +31,7 @@ async function getSentiment() {
     }
     else if (fetchedData.type === 'negative') {
         imgDiv.src = '../images/sad_face.png'
+        let videoSearch = 'negative'
     }
     else imgDiv.src = '../images/neutral_face.png';
 
