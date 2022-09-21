@@ -1,8 +1,7 @@
-//export { videoSearch }
 console.log('hello world')
 let textValue = document.getElementById('text')
 const submitBttn = document.getElementById('submit');
-submitBttn.addEventListener('click', getSentiment)
+    submitBttn.addEventListener('click', getSentiment)
 
 let postivePercentage = 0;
 let negativePercentage = 0;
@@ -30,7 +29,6 @@ async function getSentiment() {
         .catch(err => console.error(err));
     const score = fetchedData.score;
     const tone = fetchedData.type;
-    console.log(fetchedData)
     getpercentage(fetchedData)
     let imgDiv = document.getElementById('emoji');
     if (fetchedData.type === 'positive') {
@@ -57,6 +55,7 @@ async function getSentiment() {
     //document.getElementById('exampleModalCenter').modal('show')
     document.getElementById('exampleModalLabel').innerText = dateString2
     document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% neutral`
+
 }
 
 function getpercentage(fetchedData) {
@@ -79,3 +78,4 @@ function getpercentage(fetchedData) {
     negativePercentage = negCount / keywords.length * 100;
     neutralPercentage = neutCount / keywords.length * 100;
 }
+console.log(localStorage)
