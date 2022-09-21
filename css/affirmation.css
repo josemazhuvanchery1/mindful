@@ -1,3 +1,47 @@
-body{
+body {
     background-color:#a8ccc0;
+    text-align: center;
 }
+ #openbtn {
+    position: absolute;
+    left: 0;
+    background-color: #31a77e;
+}
+#journel-button{
+    background-color: #31a77e;
+    margin: 20px;
+    border-radius: 18px
+}
+#journel-button :hover{
+    cursor: pointer;
+    opacity: .5;
+}
+
+#sidebar {
+    height: 100%; 
+     width: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+     padding-top: 40px; 
+    background-color: lightgray;
+    opacity: .9;
+    }
+    
+#sidebar a {
+    padding: 12px;
+    font-size: 24px;
+    display: block;
+    border-bottom: 1px solid black;
+    text-align: left;
+    }
+    
+#sidebar a:hover {
+    cursor: pointer;
+    opacity: .5;
+    }
+    
+#body-text {
+    margin-left: 150px;
+    font-size: 18px;
+    }
