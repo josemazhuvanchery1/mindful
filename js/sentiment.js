@@ -1,10 +1,13 @@
+export { videoSearch }
 console.log('hello world')
 let textValue = document.getElementById('text')
 const submitBttn = document.getElementById('submit');
 submitBttn.addEventListener('click', getSentiment)
+
 let postivePercentage = 0;
 let negativePercentage = 0;
 let neutralPercentage = 0;
+
 
 
 async function getSentiment() {
@@ -35,6 +38,7 @@ async function getSentiment() {
     }
     else if (fetchedData.type === 'negative') {
         imgDiv.src = '../images/sad_face.png'
+        let videoSearch = 'negative'
     }
     else imgDiv.src = '../images/neutral_face.png';
 
