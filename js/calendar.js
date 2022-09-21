@@ -96,7 +96,7 @@ function initButtons() {
   });
 }
 
-function showTextModal(){
+function showTextModal() {
   $('#exampleModalLong').modal("show")
 
 
