@@ -1,0 +1,20 @@
+{
+  "name": "mindful",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "moduel",
+    "url": "git+https://github.com/josemazhuvanchery1/mindful.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josemazhuvanchery1/mindful/issues"
+  },
+  "homepage": "https://github.com/josemazhuvanchery1/mindful#readme"
+}
