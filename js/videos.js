@@ -8,6 +8,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const vid6 = document.querySelector('#vid-6')
     const vid7 = document.querySelector('#vid-7')
     const vid8 = document.querySelector('#vid-8')
+    const localArr = Object.keys(localStorage)
+    const recentLocal = localArr[localArr.length-1]
+    const recentTone = localStorage[recentLocal].slice(12,15)
     const searchType = findType()
 
     fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${searchType}&key=AIzaSyCf9p4GkhwTsJWJmWruTAgUhTOjGDbouYI`)
@@ -23,20 +26,11 @@ window.addEventListener('DOMContentLoaded', () => {
             vid7.src = `https://www.youtube.com/embed/${data.items[7].id.videoId}`
             vid8.src = `https://www.youtube.com/embed/${data.items[8].id.videoId}`
         })
+        function findType(){
+            if (recentTone === 'neg'){
+                return 'motivational meditation'
+            } else {
+                return 'meditation'
+            }
+        }
 })
-
-function findType (){
-    for (key in localStorage){
-        if (key !== 'length'){
-        searchType = (localStorage[key].slice(12,15))
-        }
-        if (searchType === 'neg'){
-            return searchType = 'motivational meditation'
-        } else {
-            return searchType = 'meditation'
-        }
-    }
-}
-
-console.log(localStorage)
-console.log(searchType)
