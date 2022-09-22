@@ -24,18 +24,18 @@
   <div class="main-container d-flex">
     <div class="sidebar" id="side_nav">
       <div class="header-box px-3 pt-3 pb-4 d-flex justify-content-between">
-        <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">ML</span><span
-            class="text-white">Mindful</span></h1>
+        <a href="./index.html"><h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">ML</span><span
+            class="text-white">Mindful</span></h1></a>
         <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fal fa-stream"></i></button>
       </div>
 
       <ul class="list-unstyled px-2">
-        <li class="active"><a href="#" class="text-decoration-none px-3 py-2 d-block"><i
-              class="fal fa-home"></i>Dashboard</a></li>
-        <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i
-              class="fal fa-calendar"></i>Calendar</a></li>
-        <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i
-              class="fas fa-play"></i>Meditation</a></li>
+        <li class="active"><a href="./sentiment.html" class="text-decoration-none px-3 py-2 d-block"><i
+              class="icon fal fa-home"></i>Dashboard</a></li>
+        <li class=""><a href="./calendar.html" class="text-decoration-none px-3 py-2 d-block"><i
+              class="icon fal fa-calendar"></i>Calendar</a></li>
+        <li class=""><a href="./videos.html" class="text-decoration-none px-3 py-2 d-block"><i
+              class="icon fas fa-play"></i>Meditation</a></li>
       </ul>
       <hr class="h-color mx-2">
 
@@ -45,12 +45,12 @@
     </div>
 
     <div class="content">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <nav id='navBar'class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
           <div class="d-flex justify-content-between d-md-none d-block">
             <button class="btn px-1 py-0 open-btn me-2"><i class="fal fa-stream"></i></button>
           </div>
-          <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white">Journal
+          <a id="pageTitle"class="navbar-brand fs-4" href="#"><span class="">Journal
               Entry</span></a>
 
           <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
@@ -62,7 +62,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                <a class="nav-link active" aria-current="page" href="#"><i class="far fa-user"></i></a>
               </li>
 
 
@@ -74,15 +74,16 @@
       </nav>
 
       <div class="dashboard-content px-3 pt-4">
+        <div id="alignFormandDate">
         <input class="fs-5" id="dateEntry" type="date">
         <!-- <textarea id="text"></textarea> -->
         <form>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1"></label>
+            <!-- <label for="exampleFormControlTextarea1"></label> -->
             <textarea id="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         </form>
-
+      </div>
         <button type="button" id="submit" class="btn btn-primary" data-toggle="modal"
           data-target="#exampleModal">submit</button>
         <img id="emoji" src="">
