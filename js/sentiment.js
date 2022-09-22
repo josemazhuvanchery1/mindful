@@ -56,6 +56,7 @@ async function getSentiment() {
     //document.getElementById('exampleModalCenter').modal('show')
     document.getElementById('exampleModalLabel').innerText = dateString2
     document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% neutral`
+    textValue.value = ''
 
 }
 
