@@ -44,6 +44,7 @@ function load() {
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
     let divImg = document.createElement('img');
+    
     if (i > paddingDays) {
       let newDate = new Date(year2, month2 - 1 + nav, i - paddingDays)
       let newDateString = newDate.toLocaleDateString('en-us', {
@@ -55,16 +56,17 @@ function load() {
       let toneParsed = JSON.parse(toneStored)
 
       if (localStorage.getItem(newDateString)) {
+        divImg.setAttribute('id', 'toneEmoji');
         if (toneParsed.toneVal === 'positive') {
-          divImg.src = '../images/happy_face.png'
+          divImg.src = '../images/cowboy-hat-face-min.png'
           console.log(toneParsed.toneVal)
         }
         else if (toneParsed.toneVal === 'negative') {
-          divImg.src = '../images/sad_face.png'
+          divImg.src = '../images/persevering-face-min.png'
           console.log(toneParsed.toneVal)
         }
         else {
-          divImg.src = '../images/neutral_face.png';
+          divImg.src = '../images/diagnol-face-min.png';
           console.log(toneParsed.toneVal)
         }
         daySquare.addEventListener('click', () => {
