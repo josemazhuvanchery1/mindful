@@ -4653,7 +4653,7 @@ textarea.form-control-lg {
     border-top-left-radius: 0;
   }
   .card-group > .card:not(:first-child) .card-img-bottom,
-.card-group > .card:not(:first-child) .card-footer {
+.card-group > :not(:first-child) -footer {
     border-bottom-left-radius: 0;
   }
 }
