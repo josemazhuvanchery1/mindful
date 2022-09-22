@@ -31,6 +31,7 @@ async function getSentiment() {
     const tone = fetchedData.type;
     getpercentage(fetchedData)
     let imgDiv = document.getElementById('emoji');
+
     if (fetchedData.type === 'positive') {
         imgDiv.src = '../images/cowboy-hat-face.png'
     }
@@ -78,4 +79,15 @@ function getpercentage(fetchedData) {
     negativePercentage = negCount / keywords.length * 100;
     neutralPercentage = neutCount / keywords.length * 100;
 }
-console.log(localStorage)
+
+
+$(".sidebar ul li").on('click', function(){
+    $(".sidebar ul li.active").removeClass('active');
+    $(this).addClass('active');
+})
+$('.open-btn').on('click', function(){
+    $('.sidebar').addClass('active')
+})
+$('.close-btn').on('click', function(){
+    $('.sidebar').removeClass('active')
+})

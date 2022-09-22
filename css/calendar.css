@@ -37,6 +37,7 @@ body {
   #weekdays div {
     width: 100px;
     padding: 10px;
+    margin-left: 10px;
   }
   #calendar {
     width: 100%;
@@ -70,3 +71,8 @@ body {
     box-shadow: none !important;
   }
   
+  #toneEmoji{
+    width: 70px;
+    height: 70px;
+    margin-left: 5px;;
+}
