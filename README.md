@@ -15,7 +15,7 @@ Promises
 webAPI
 
 Product Vision:
-Mindful is a journel entry app that makes it easy to track your mood. With Mindful, you can write your journal entry each day and it will analyze the text and give you an emoji representing the overall tone/mood, of your journaL. You can also save this tone to your calendar and track the text for why your mood was the way it was on the day you wrote it. Mindful also provides you with mindfulness youtube videos, depending on your overall mood rating. Because of Mindful users have all they need for mindfulness, all in one app.
+Mindful is a journal entry app that makes it easy to track your mood. With Mindful, you can write your journal entry each day and it will analyze the text and give you an emoji representing the overall tone/mood, of your journal. You can also save this tone to your calendar and track the text for why your mood was the way it was on the day you wrote it. Mindful also provides you with mindfulness youtube videos, depending on your overall mood rating. Because of Mindful users have all they need for mindfulness, all in one app.
 
 MVP:
 Fetch data from sentiment API.
