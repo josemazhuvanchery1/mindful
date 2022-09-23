@@ -1,10 +1,15 @@
+html, body {
+    height: 100%;
+  }
+
 body{
     background-color:#eee;
 }
 #side_nav{
     background: #000;
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 300px;
+    max-width: 300px;
+    height: 1000px;
     transition: all 0.3s;
 }
 .content{
@@ -12,17 +17,67 @@ body{
     width: 100%;
 }
 hr.h-color{
-    background: #eee;
+    background: rgb(255, 255, 255);
+}
+.sidebar li{
+    margin-bottom: 20px;
 }
 .sidebar li.active{
     background: #eee;
     border-radius: 8px;
 }
 .sidebar li.active a, .sidebar li.active a:hover{
-    color:#000;
+    color:rgb(2, 2, 2);
 }
 .sidebar li a{
-    color: #fff;
+    color: rgb(255, 255, 255);
+}
+.list-unstyled{
+    margin-top: 30px;
+}
+.icon{
+    margin-right: 10px;
+}
+
+#text{
+    min-width: 900px;
+    max-width: 900px;
+    min-height: 70vh;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+#navBar{
+    background-color: #edf6f9 !important;
+}
+#alignFormandDate{
+    display:flex;
+    flex-direction: column;
+    width: 150px;
+   
+}
+#pageTitle{
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.vid-container {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    height: 550px;
+    margin: auto;
+}
+
+.vid-text {
+    grid-column: 1/4;
+}
+
+.vid-cell {
+    justify-content: center;
+    padding: 7.5px;
 }
 
 @media(max-width: 767px){
@@ -35,7 +90,8 @@ hr.h-color{
     #side_nav.active{
         margin-left: 0;
     }
-}
-#text{
-    min-height: 60vh;
+    .vid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
