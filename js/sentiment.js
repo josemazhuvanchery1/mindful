@@ -30,16 +30,16 @@ async function getSentiment() {
     const score = fetchedData.score;
     const tone = fetchedData.type;
     getpercentage(fetchedData)
-    let imgDiv = document.getElementById('emoji');
+    //let imgDiv = document.getElementById('emoji');
 
-    if (fetchedData.type === 'positive') {
-        imgDiv.src = '../images/cowboy-hat-face.png'
-    }
-    else if (fetchedData.type === 'negative') {
-        imgDiv.src = '../images/persevering-face.png'
-        let videoSearch = 'negative'
-    }
-    else imgDiv.src = '../images/diagnol-face.png';
+    // if (fetchedData.type === 'positive') {
+    //     imgDiv.src = '../images/cowboy-hat-face.png'
+    // }
+    // else if (fetchedData.type === 'negative') {
+    //     imgDiv.src = '../images/persevering-face.png'
+    //     let videoSearch = 'negative'
+    // }
+    // else imgDiv.src = '../images/diagnol-face.png';
 
     let date = new Date(document.getElementById('dateEntry').value);
 

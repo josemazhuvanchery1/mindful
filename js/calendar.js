@@ -70,9 +70,11 @@ function load() {
           console.log(toneParsed.toneVal)
         }
         daySquare.addEventListener('click', () => {
-          $('#exampleModalLong').modal("show")
-          document.getElementById('exampleModalLongTitle').innerText = newDateString;
-          document.getElementById('modalBody').innerText = toneParsed.dataVal
+           // $('#exampleModalLabel').modal("show")
+          var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+          myModal.show()
+          document.getElementById("exampleModalLabel").innerText = newDateString;
+          document.getElementById("modalBody").innerText = toneParsed.dataVal;
         });
       }
       daySquare.innerText = i - paddingDays;
@@ -89,6 +91,7 @@ function load() {
     calendar.appendChild(daySquare);
     daySquare.appendChild(divImg)
   }
+ 
 }
 
 
