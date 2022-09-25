@@ -1,4 +1,4 @@
-body {
+/* body {
     display: flex;
     margin-top: 50px;
     justify-content: center;
@@ -6,13 +6,14 @@ body {
   }
   button {
     width: 75px;
+    height: 50px;
     cursor: pointer;
-    box-shadow: 0px 0px 2px gray;
+    box-shadow: 0px 0px 2px gray; 
     border: none;
     outline: none;
     padding: 5px;
     border-radius: 5px;
-    color: white;
+     color: white;
   }
   
   #header {
@@ -25,6 +26,9 @@ body {
   }
   #header button {
     background-color:#92a1d1;
+    height: 30px;
+    margin-top: 10px;
+    padding-bottom: 30px;
   }
   #container {
     width: 770px;
@@ -44,11 +48,12 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+
   }
   .day {
     width: 100px;
     padding: 10px;
-    height: 100px;
+    height: 90px;
     cursor: pointer;
     box-sizing: border-box;
     background-color: white;
@@ -72,7 +77,206 @@ body {
   }
   
   #toneEmoji{
-    width: 70px;
-    height: 70px;
-    margin-left: 5px;;
+    width: 60px;
+    height: 60px;
+    margin-left: 15px;
+}
+
+#side_nav{
+  background: #000;
+  min-width: 300px;
+  max-width: 300px;
+  transition: all 0.3s;
+}
+.content{
+  min-height: 100vh;
+  width: 100%;
+}
+hr.h-color{
+  background: #eee;
+}
+.sidebar li{
+  margin-bottom: 20px;
+}
+.sidebar li.active{
+  background: #eee;
+  border-radius: 8px;
+}
+.sidebar li.active a, .sidebar li.active a:hover{
+  color:rgb(2, 2, 2);
+}
+.sidebar li a{
+  color: #fff;
+}
+.list-unstyled{
+  margin-top: 30px;
+}
+.icon{
+  margin-right: 10px;
+}
+
+
+
+
+@media(max-width: 767px){
+  #side_nav{
+      margin-left: -250px;
+      position: fixed;
+      min-height: 100vh;
+      z-index: 1;
+  }
+  #side_nav.active{
+      margin-left: 0;
+  }
+}
+#text{
+  min-width: 900px;
+  max-width: 900px;
+  min-height: 70vh;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+#navBar{
+  background-color: #edf6f9 !important;
+}
+
+#dashboardContainer{
+  margin-left: 60px;
+  padding-top: 0px !important;
+}
+ */
+
+ 
+
+body {
+  background-color: #FFFCFF;
+  font-family: 'Roboto', sans-serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+}
+.sidebar header{
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  background: #063146;
+  user-select:none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid black;
+  transition: .4s;
+  text-decoration: none !important;
+}
+ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+
+section{
+  margin-left: 350px;
+}
+
+button {
+  width: 75px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray; 
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+   color: white;
+}
+
+#header {
+  padding: 10px;
+  color: #d36c6c;
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+#header button {
+  background-color:#92a1d1;
+  height: 30px;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+#container {
+  width: 770px;
+}
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: #247BA0;
+}
+#weekdays div {
+  width: 100px;
+  padding: 10px;
+  margin-left: 10px;
+}
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.day {
+  width: 100px;
+  padding: 10px;
+  height: 90px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day:hover {
+  background-color: #e8faed;
+}
+
+.day + #currentDay {
+  background-color:#e8f4fa;
+}
+.padding {
+  cursor: default !important;
+  background-color: #FFFCFF !important;
+  box-shadow: none !important;
+}
+
+#toneEmoji{
+  width: 60px;
+  height: 60px;
+  margin-left: 15px;
+}
+
+#title{
+  text-decoration: none;
 }
