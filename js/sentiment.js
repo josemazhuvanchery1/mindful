@@ -1,7 +1,7 @@
 console.log('hello world')
 let textValue = document.getElementById('text')
 const submitBttn = document.getElementById('submit');
-    submitBttn.addEventListener('click', getSentiment)
+submitBttn.addEventListener('click', getSentiment)
 
 let postivePercentage = 0;
 let negativePercentage = 0;
@@ -30,20 +30,11 @@ async function getSentiment() {
     const score = fetchedData.score;
     const tone = fetchedData.type;
     getpercentage(fetchedData)
-    //let imgDiv = document.getElementById('emoji');
-
-    // if (fetchedData.type === 'positive') {
-    //     imgDiv.src = '../images/cowboy-hat-face.png'
-    // }
-    // else if (fetchedData.type === 'negative') {
-    //     imgDiv.src = '../images/persevering-face.png'
-    //     let videoSearch = 'negative'
-    // }
-    // else imgDiv.src = '../images/diagnol-face.png';
+    console.log(fetchedData)
 
     let date = new Date(document.getElementById('dateEntry').value);
-
-    let dateString2 = date.toLocaleDateString('en-us', {
+    let date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
+    let dateString2 = date2.toLocaleDateString('en-us', {
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
@@ -53,7 +44,6 @@ async function getSentiment() {
         dataVal: data
     }
     localStorage.setItem(dateString2, JSON.stringify(obj));
-    //document.getElementById('exampleModalCenter').modal('show')
     document.getElementById('exampleModalLabel').innerText = dateString2
     document.getElementById('modalBody').innerText = `Your journal is ${Math.floor(postivePercentage)}% positive, ${Math.floor(negativePercentage)}% negative, and ${Math.floor(neutralPercentage)}% neutral`
     textValue.value = ''
@@ -68,7 +58,7 @@ function getpercentage(fetchedData) {
     for (let i = 0; i < keywords.length; i++) {
 
         let score = keywords[i].score
-        if (score > 0.3) {
+        if (score > 0) {
             posCount++;
         }
         else if (score < - 0.3) {
@@ -82,13 +72,13 @@ function getpercentage(fetchedData) {
 }
 
 
-$(".sidebar ul li").on('click', function(){
+$(".sidebar ul li").on('click', function () {
     $(".sidebar ul li.active").removeClass('active');
     $(this).addClass('active');
 })
-$('.open-btn').on('click', function(){
+$('.open-btn').on('click', function () {
     $('.sidebar').addClass('active')
 })
-$('.close-btn').on('click', function(){
+$('.close-btn').on('click', function () {
     $('.sidebar').removeClass('active')
 })
