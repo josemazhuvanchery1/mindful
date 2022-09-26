@@ -1,13 +1,35 @@
-const affirmation = document.getElementById("affirmation-writing")
 const affirmation_b = document.querySelector('#bottom')
+const orange_line = document.querySelector('#orange-line')
 
+const getAffirmation = () => {
 fetch("https://dulce-affirmations-api.herokuapp.com/affirmation/index")
     .then((response) => response.json())
     .then((json) => {
         console.log(json[0].phrase)
-        affirmation_b.innerText = `${json[Math.floor(Math.random() * json.length)].phrase}`
-    })
+        affirmation_b.innerText = `${json[Math.floor(Math.random()*json.length)].phrase}`
+      })
+    }
+getAffirmation();
 
+// const openingCrawl = () => {
+//     var i = 0;
+//     var txt = `${json[Math.floor(Math.random()*json.length)].phrase}`; /* The text */
+//     var speed = 50;
+//     fetch("https://dulce-affirmations-api.herokuapp.com/affirmation/index")
+//           .then((response) => response.json())
+//           .then((json) => {
+//             function typeWriter() {
+//            var text= `${json[Math.floor(Math.random()*json.length)].phrase}`
+//             if (i < text.length) {
+//                 affirmation_b.innerHTML += text.charAt(i);
+//                 i++;
+//                 setTimeout(typeWriter, speed)
+//                 }
+//              }
+//              typeWriter()
+//           })
+//         }
+    // openingCrawl();
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -24,9 +46,7 @@ window.addEventListener('DOMContentLoaded', event => {
         }
 
     };
-
-    // Shrink the navbar 
-    navbarShrink();
+navbarShrink();
 
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
@@ -52,10 +72,4 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
-    // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
     });
-
-});
