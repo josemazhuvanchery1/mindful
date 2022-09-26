@@ -2,11 +2,11 @@ const affirmation = document.getElementById("affirmation-writing")
 const affirmation_b = document.querySelector('#bottom')
 
 fetch("https://dulce-affirmations-api.herokuapp.com/affirmation/index")
-      .then((response) => response.json())
-      .then((json) => {
+    .then((response) => response.json())
+    .then((json) => {
         console.log(json[0].phrase)
-        affirmation_b.innerText = `${json[Math.floor(Math.random()*json.length)].phrase}`
-      })
+        affirmation_b.innerText = `${json[Math.floor(Math.random() * json.length)].phrase}`
+    })
 
 
 window.addEventListener('DOMContentLoaded', event => {

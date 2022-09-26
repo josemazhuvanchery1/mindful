@@ -1,7 +1,6 @@
 let nav = 0;
 let clicked = null;
 const query = name => document.querySelector(`${name}`)
-//let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 const calendar = document.getElementById('calendar');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -10,8 +9,6 @@ let date2 = new Date();
 const day2 = date2.getDate();
 const month2 = date2.getMonth() + 1;
 const year2 = date2.getFullYear()
-
-// let newDateString = '';
 
 function load() {
   const dt = new Date();
@@ -44,7 +41,7 @@ function load() {
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
     let divImg = document.createElement('img');
-    
+
     if (i > paddingDays) {
       let newDate = new Date(year2, month2 - 1 + nav, i - paddingDays)
       let newDateString = newDate.toLocaleDateString('en-us', {
@@ -70,7 +67,6 @@ function load() {
           console.log(toneParsed.toneVal)
         }
         daySquare.addEventListener('click', () => {
-           // $('#exampleModalLabel').modal("show")
           var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
           myModal.show()
           document.getElementById("exampleModalLabel").innerText = newDateString;
@@ -82,8 +78,6 @@ function load() {
       if (i - paddingDays === day && nav === 0) {
         daySquare.id = 'currentDay';
       }
-
-      //daySquare.addEventListener('click', () => /*console.log(toneParsed.dataVal)*/ $('#exampleModalLong').modal("show"));
     } else {
       daySquare.classList.add('padding');
     }
@@ -91,9 +85,8 @@ function load() {
     calendar.appendChild(daySquare);
     daySquare.appendChild(divImg)
   }
- 
-}
 
+}
 
 function initButtons() {
   document.getElementById('nextButton').addEventListener('click', () => {
@@ -106,7 +99,6 @@ function initButtons() {
     load();
   });
 }
-
 
 initButtons();
 load();
