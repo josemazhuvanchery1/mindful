@@ -247,7 +247,7 @@ button {
 }
 .day {
   width: 100px;
-  padding: 10px;
+  padding: 5px;
   height: 90px;
   cursor: pointer;
   box-sizing: border-box;
@@ -275,8 +275,13 @@ button {
   width: 60px;
   height: 60px;
   margin-left: 15px;
+  /* padding-bottom: 0px !important; */
 }
 
 #title{
   text-decoration: none;
+}
+#modalBody{
+  font-size: 18px;
+  font: serif;
 }
